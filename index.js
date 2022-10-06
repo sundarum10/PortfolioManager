@@ -1,1 +1,0 @@
-const person = require('./Person')

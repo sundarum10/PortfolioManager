@@ -1,0 +1,6 @@
+{
+    "mongoURI" : "mongodb+srv://Sundar_Udayagiri:Sundarum%4010@cluster0.i18d6.mongodb.net/?retryWrites=true&w=majority",
+    "jwtSecret" : "mysecrettoken",
+    "githubClientId" : "c79b8d6cf269312141a9",
+    "githubSecret" : "761d4fd42110d76b3e3a256792ffb750eb77bc05"
+}
