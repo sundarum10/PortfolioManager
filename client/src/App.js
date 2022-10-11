@@ -1,4 +1,4 @@
-import React , {Fragment} from 'react' ;
+import React , {Fragment, useEffect } from 'react' ;
 import './App.css';
 import Navbar from './components/layouts/Navbar';
 import Landing from './components/layouts/Landing';
@@ -10,10 +10,21 @@ import { createBrowserHistory } from 'history'
 import { Provider } from 'react-redux';
 import store from './store';
 import Alert from './components/layouts/Alert';
+import { loadUser } from './actions/auth';
+import setAuthToken from './utils/setAuthtoken';
 
 const newHistory = createBrowserHistory();
 
-const App = () => (
+if(localStorage.token) {
+  setAuthToken(localStorage.token)
+}
+const App = () => {
+
+  useEffect(()=>{
+    store.dispatch(loadUser());
+  },[]);
+
+  return (
   <Provider store = {store} >
   <Router history={newHistory}>
     <Fragment>
@@ -30,6 +41,6 @@ const App = () => (
   </Fragment>
   </Router>
   </Provider>
-);
+)};
 
 export default App;
